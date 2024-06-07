@@ -19,7 +19,7 @@ const MealDetalesPage = ({ params }) => {
     return <>
         <header className={styles.header}>
             <div className={styles.image}>
-                <Image src={!meal.image.startsWith("/") ? "/" + meal.image : meal.image } alt='Meal Image' fill />
+                <Image src={!meal.image.startsWith("/") ? "/" + meal.image : meal.image } alt='Meal Image' fill priority />
             </div>
             <div className={styles.headerText}>
                 <h1>{meal.title}</h1>
