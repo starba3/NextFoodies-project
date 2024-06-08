@@ -3,22 +3,24 @@ import Image from 'next/image';
 
 import classes from './meal-item.module.css';
 
-export default function MealItem({ title, slug, image, summary, creator }) {
+export default function MealItem({ meal }) {
+
+  console.log(meal.slug)
   return (
     <article className={classes.meal}>
       <header>
         <div className={classes.image}>
-          <Image src={!image.startsWith("/") ? "/" + image : image} alt={title} fill priority />
+          <Image src={meal.image} alt={meal.title} fill priority />
         </div>
         <div className={classes.headerText}>
-          <h2>{title}</h2>
-          <p>by {creator}</p>
+          <h2>{meal.title}</h2>
+          <p>by {meal.creator}</p>
         </div>
       </header>
       <div className={classes.content}>
-        <p className={classes.summary}>{summary}</p>
+        <p className={classes.summary}>{meal.summary}</p>
         <div className={classes.actions}>
-          <Link href={`/meals/${slug}`}>View Details</Link>
+          <Link href={`/meals/${meal.slug}`}>View Details</Link>
         </div>
       </div>
     </article>

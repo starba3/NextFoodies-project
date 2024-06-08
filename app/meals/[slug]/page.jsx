@@ -6,9 +6,11 @@ import { notFound } from 'next/navigation'
 
 
 
-const MealDetalesPage = ({ params }) => {
+const MealDetalesPage = async ({ params }) => {
 
-    const meal = getMeal(params.slug)
+    
+    const meal = await getMeal(params.slug)
+    // console.log({ slug: params.slug, meal: meal});
 
     if(!meal){
         notFound()
@@ -19,7 +21,7 @@ const MealDetalesPage = ({ params }) => {
     return <>
         <header className={styles.header}>
             <div className={styles.image}>
-                <Image src={!meal.image.startsWith("/") ? "/" + meal.image : meal.image } alt='Meal Image' fill priority />
+                <Image src={meal.image} alt='Meal Image' fill priority />
             </div>
             <div className={styles.headerText}>
                 <h1>{meal.title}</h1>

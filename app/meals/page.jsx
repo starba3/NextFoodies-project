@@ -3,9 +3,10 @@ import classes from './page.module.css';
 import { getMeals } from '@/lib/meals';
 import { Suspense } from 'react';
 import Link from 'next/link';
+import { unstable_noStore } from 'next/cache';
 
 const Meals = async () => {
-    const mealsList = getMeals()
+    const mealsList = await getMeals()
 
     return <MealsGrid meals={mealsList}/>
 }
