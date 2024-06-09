@@ -1,12 +1,4 @@
-@media (max-width: 600px){
-  .header {
-    flex-direction: column;
-  }
 
-  .slideshow {
-    max-height: 100%;
-  }
-}
 
 .header {
     display: flex;
@@ -82,4 +74,16 @@
     width: 90%;
     margin: 2rem auto;
     text-align: center;
+  }
+
+  @media (max-width: 600px){
+    .header {
+      flex-direction: column;
+    }
+  
+    .slideshow {
+      max-height: 100%;
+      max-width: 100%;
+      padding-right: 2rem auto;
+    }
   }

@@ -20,12 +20,12 @@ const MainHeader = () => {
                     <ul>
                         <li>
                             <NavLink href="/meals">
-                                Browse Meals
+                                Meals
                             </NavLink>
                         </li>
                         <li>
                             <NavLink href="/community">
-                                Foodies Community
+                                Community
                             </NavLink>
                         </li>
                     </ul>
